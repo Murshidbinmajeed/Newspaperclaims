@@ -1,0 +1,20 @@
+#root{
+  width:  100%;
+
+}
+.App {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+Header{
+   background-color: aliceblue;
+}
+Newspaperclaims{
+  flex: 1;
+  padding: 20px; 
+}
+.content-container{
+  display: flex;
+  flex: 1;
+}
