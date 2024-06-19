@@ -5,9 +5,11 @@
     color: black; 
 }
 .logo {
-    height: 4em;
+    background-color: #ABD8ED;
+    height: 6em;
     padding: 1.5em;
 } 
 .heading{
     text-align: start;
+    background-color:  #ABD8ED;
 }

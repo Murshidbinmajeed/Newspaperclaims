@@ -1,12 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import "../css/Newspaperclaims.css";
+import Applypopup from './Applypopup';
 
 
 const Newspaperclaims = () => {
+    const [showpopup, setShowpopup] = useState(false);
     const[employee,setEmployee] = useState({});
-    const currentYear = new Date().getFullYear();
+    const [claimData,setClaimData]=useState({
+        "sapId":"",
+        "payLevel":"",
+        "group":"",
+        "claimPeriod":"",
+        "claimYear":"",
+        "claimAmount":""
+    });
     
+    const {sapId,payLevel,group,claimPeriod,claimYear,claimAmount}=claimData;
+
+    const togglePopup = () => {
+        setShowpopup(!showpopup);
+    };
 
     useEffect(() => {
         const getEmplloyee = async () => {
@@ -19,7 +33,7 @@ const Newspaperclaims = () => {
             if(res.status === 200){
                 setEmployee(res.data[0]);
                 console.log(employee);
-            }
+            }  
         }
         getEmplloyee();
 
@@ -27,37 +41,42 @@ const Newspaperclaims = () => {
 
   return (
     <>
-        <div className='card'>
+        <div className='col justify-content-center'>
+        <div className='row justify-content-center card'>
             <div className='cardheader'>
-                <p>Details</p>
+                <span className='span'></span>
             </div>
             <div className='cardbody'>
-                <div className='row'>
-                    <div className='col'><span className='spanH'><strong>Name </strong></span></div>
-                    <div className='col'><span className='spanC'>{employee.firstname} {employee.middlename} {employee.lastname}</span></div>
+                <div className='row1'>
+                    <div className='col1'><span className='spanH'><strong>Name </strong></span></div>
+                    <div className='col1'><span className='spanC'>{employee.firstname} {employee.middlename} {employee.lastname}</span></div>
                 </div>
-                <div className='row'>
-                    <div className='col'><span className='spanH'><strong>SAP ID </strong></span></div>
-                    <div className='col'><span className='spanC'>{employee.personnelno}</span></div>
+                <div className='row1'>
+                    <div className='col1'><span className='spanH'><strong>SAP ID </strong></span></div>
+                    <div className='col1'><span className='spanC'>{employee.personnelno}</span></div>
                 </div>
-                <div className='row'>
-                    <div className='col'><span className='spanH'><strong>Department</strong></span></div>
-                    <div className='col'><span className='spanC'>{employee.dept}</span></div>
+                <div className='row1'>
+                    <div className='col1'><span className='spanH'><strong>Department</strong></span></div>
+                    <div className='col1'><span className='spanC'>{employee.dept}</span></div>
                 </div>
-                <div className='row'>
-                    <div className='col'><span className='spanH'><strong>Designation</strong></span></div>
-                    <div className='col'><span className='spanC'>{employee.position}</span></div>
+                <div className='row1'>
+                    <div className='col1'><span className='spanH'><strong>Designation</strong></span></div>
+                    <div className='col1'><span className='spanC'>{employee.position}</span></div>
                 </div>
-                <div className='row'>
-                    <div className='col'><span className='spanH'><strong>Pay Scale & Basic Pay</strong></span></div>
-                    <div className='col'><span className='spanC'>{employee.payscalegroup}</span></div>
+                <div className='row1'>
+                    <div className='col1'><span className='spanH'><strong>Pay Scale & Basic Pay</strong></span></div>
+                    <div className='col1'><span className='spanC'>{employee.payscalegroup}</span></div>
                 </div>
-                <div className='row'>
-                    <div className='col'><span className='spanH'><strong>Date of Joining</strong></span></div>
-                    <div className='col'><span className='spanC'>{employee.joiningdate}</span></div>
+                <div className='row1'>
+                    <div className='col1'><span className='spanH'><strong>Date of Joining</strong></span></div>
+                    <div className='col1'><span className='spanC'>{employee.joiningdate}</span></div>
                 </div>
-                <button>apply</button>
+                <button className='btn btn-primary   apply-btn' onClick={togglePopup}>Apply</button>
             </div>
+        </div>
+        <div className='row'>
+            <Applypopup claimdata={claimData} show={showpopup} onClose={togglePopup}></Applypopup>
+        </div>
         </div>
     </>
   )

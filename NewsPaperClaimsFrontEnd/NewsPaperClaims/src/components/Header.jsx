@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <>
         <header className='header'>
-            <a href='#' className=''><img className='logo' src={IITBlogo}  alt="CSS header" /></a>
+            <img className='logo' src={IITBlogo}  alt="CSS header" />
             <h4 className='heading'>भारतीय प्रौद्योगिकी संस्थान मुंबई <br />Indian Institute of Technology Bombay</h4>
         </header>
     </>

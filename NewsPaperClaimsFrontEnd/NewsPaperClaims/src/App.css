@@ -8,13 +8,17 @@
   flex-direction: column;
 }
 Header{
-   background-color: aliceblue;
+   background-color: #ABD8ED;
+   height: auto;
+   /* margin-bottom: 1px; */
 }
+
 Newspaperclaims{
   flex: 1;
   padding: 20px; 
 }
+
 .content-container{
   display: flex;
-  flex: 1;
+  flex: 1; 
 }

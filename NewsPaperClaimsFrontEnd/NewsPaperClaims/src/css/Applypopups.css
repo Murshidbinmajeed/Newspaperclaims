@@ -1,0 +1,45 @@
+
+
+.popcard {
+    padding: 20px;
+    max-width: 75%;
+    margin: 20px auto;
+    border: 10px;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    background-color: #d8caca;
+    /* transition: transform 0.2s; */
+    align-items: left;
+    text-align: left;
+}
+.content{
+    text-align: start;
+}
+.selections{
+    text-align: center;
+}
+.input-box{
+    color: black;
+    border-radius: 1px 1px;
+}
+
+button{
+    margin-top: 25px;
+    margin-left: 80px;
+    margin-bottom: 10px;
+}
+
+.form-check-input{
+    margin-left: 5px;
+}
+.input-group{
+    padding-left: 10px;
+    border-color: white;
+    color: black;
+}
+.ammount{
+    color: black;
+}
+.error-msg{
+    color: red;
+}

@@ -4,9 +4,11 @@ import '../css/Sidebar.css';
 const Sidebar = () => {
   return (
     <>
-        <aside className="sidebar">
-            <p>sidebar</p>
-        </aside>
+        <nav className="sidebar">
+            <div className='link1'>
+              <li>Existing Application</li>
+            </div>
+        </nav>
     </>
   )
 }
