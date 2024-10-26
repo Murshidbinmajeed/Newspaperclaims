@@ -1,0 +1,1 @@
+This project is backend service for newspaper reinbersement application, I have implemented authentication(the users will be authorized using external sso, only those users will land into this application)
